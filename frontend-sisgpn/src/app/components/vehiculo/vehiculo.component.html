@@ -1,0 +1,71 @@
+<div class="card border-info mb-3">
+    <div class="card-header"></div>
+    <div class="card-body">
+      <h5 class="card-title">Listado de Vehículos</h5>
+      <div *ngIf="vehiculos.length==0" class="alert alert-info">
+        No hay registros en la base de datos!
+      </div>
+
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/personas/form']">Nuevo registro</button>
+      </div>
+      
+      
+  <table class="table table-bordered table-striped" *ngIf="vehiculos.length>0">
+      <thead>
+          <tr>
+              <th>Placa</th>
+              <th>Chasis</th>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Motor</th>
+              <th>Kilometraje</th>
+              <th>Cilindraje</th>
+              <th>Capacidad de carga</th>
+              <th>Capacidad de pasajeros</th>
+              <th>Tipo de vehiculo</th>
+              <th>Observaciones</th>
+              <th>
+                Editar
+              </th>
+              <th>
+                Eliminar
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+        <tbody>
+          <tr *ngFor="let vehiculo of vehiculos  ">
+         
+          <td>{{vehiculo.placa}}</td>
+          <td>{{vehiculo.chasis}}</td>
+          <td>{{vehiculo.marca}}</td>
+          <td>{{vehiculo.modelo}}</td>
+          <td>{{vehiculo.motor}}</td>
+          <td>{{vehiculo.kilometraje}}</td>
+          <td>{{vehiculo.cilindraje}}</td>
+          <td>{{vehiculo.capacidadCarga}}</td>
+          <td>{{vehiculo.capacidadPasajeros}}</td>
+          <td>{{vehiculo.tipoVehiculo}}</td>
+          <td>{{vehiculo.observaciones}}</td>
+
+          <td>
+            <button type="button" name="btnEditar" [routerLink]="['/personas/form', vehiculo.idVehiculo]" class="btn btn-primary">Editar</button>
+          </td>
+          <td>
+            <button type="button" name="btnEliminar" (click)="deleteVehiculo(vehiculo)" class="btn btn-danger">Eliminar</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <paginator-nav *ngIf="paginador" [paginador] = "paginador"></paginator-nav>
+  </div>
+
+  <div>
+  
+  </div>
+
+
+    
+

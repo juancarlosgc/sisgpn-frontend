@@ -1,0 +1,63 @@
+<div class="card border-secondary ">
+    <div class="card-header"></div>
+    <div class="card-body">
+      <h5 class="card-title">Listado del Personal Policial</h5>
+      <div *ngIf="personas.length==0" class="alert alert-info">
+        No hay registros en la base de datos!
+      </div>
+
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/personas/form']">Nuevo registro</button>
+      </div>
+      
+      
+  <table class="table table-bordered table-striped" *ngIf="personas.length>0">
+      <thead>
+          <tr>
+              <th>Cédula</th>
+              <th>Apellidos</th>
+              <th>Nombres</th>
+              <th>Fecha de Nacimiento</th>
+              <th>Tipo de Sangre</th>
+              <th>Ciudad de nacimiento</th>
+              <th>Teléfono</th>
+              <th>Rango</th>
+              <th>
+                Editar
+              </th>
+              <th>
+                Eliminar
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+        <tbody>
+          <tr *ngFor="let persona of personas  ">
+         
+          <td>{{persona.cedula}}</td>
+          <td>{{persona.apellidos}}</td>
+          <td>{{persona.nombres}}</td>
+          <td>{{persona.fechaNacimiento}}</td>
+          <td>{{persona.tipoSangre}}</td>
+          <td>{{persona.ciudadNacimiento}}</td>
+          <td>{{persona.telefono}}</td>
+          <td>{{persona.rango}}</td>
+          <td>
+            <button type="button" name="btnEditar" [routerLink]="['/personas/form', persona.idPersona]" class="btn btn-primary">Editar</button>
+          </td>
+          <td>
+            <button type="button" name="btnEliminar" (click)="deletePersona(persona)" class="btn btn-danger">Eliminar</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <paginator-nav *ngIf="paginador" [paginador] = "paginador"></paginator-nav>
+  </div>
+
+  <div>
+  
+  </div>
+
+
+    

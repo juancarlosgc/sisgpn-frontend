@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark px2">
+    <div class="side-nav-button p-2 me-3 text-light">
+        <i class="fa-solid fa-bars fa-2xl" style="color: #dfe2e7;"></i>
+    </div>
+
+    <a class ="navbar-brand px-4">Sistema de Gestión Vehicular - Policía Nacional</a>
+
+   
+
+    <div class="navbar-collapse">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Gestión administrativa</a> 
+                <ul class="dropdown-menu dropdown-menu-dark" >
+                    <li><a *ngIf="isAdmin" class="nav-link" routerLink="/listadopersonas">Personal policial</a></li>
+                    <li><a *ngIf="isAdmin" class="nav-link" routerLink="/listadovehiculos">Vehiculos</a></li>
+                    <li><a class="nav-link" routerLink="/">Contratos</a></li>
+                    <li><a class="nav-link" routerLink="/">Dependencias</a></li>
+                </ul>
+             </li>
+
+            <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Operaciones</a> 
+               <ul class="dropdown-menu dropdown-menu-dark" >
+                    <li><a class="dropdown-item" href="#">Asignar vehículo a personal policial</a></li>
+                    <li><a class="dropdown-item" href="#">Asignar vehículo a dependencia</a></li>
+                    <li><a class="dropdown-item" href="#">Asignar personal policial a dependencia</a></li>
+                
+               </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Mantenimiento Vehicular</a> 
+                  <ul class="dropdown-menu dropdown-menu-dark" >
+                    <li><a class="dropdown-item" href="#">Solicitar mantenimiento</a></li>
+                    <li><a class="dropdown-item" href="#">Generar Orden de trabajo</a></li>
+                       
+                  </ul>
+             </li>
+       
+        </ul>
+    </div>
+
+    <div class="profile-logo dropstart">
+        <button class="btn btn-outline-light" (click)="logout()" >
+            Cerrar Sesión   
+        </button>
+        
+    </div>
+
+    
+</nav>
