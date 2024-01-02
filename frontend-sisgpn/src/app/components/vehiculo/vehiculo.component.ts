@@ -13,7 +13,7 @@ import swal from 'sweetalert2';
 export class VehiculoComponent implements OnInit {
 
   vehiculos: Vehiculo[]=[];
-  paginador: any;  
+  paginadorVehiculo: any;  
 
   constructor(private vehiculoService: VehiculoService, private activatedRoute: ActivatedRoute) { }
 
@@ -32,7 +32,7 @@ export class VehiculoComponent implements OnInit {
         })
         ).subscribe(response => {
          this.vehiculos = response.content as Vehiculo[];
-         this.paginador = response;
+         this.paginadorVehiculo = response;
        
        }); 
        }

@@ -12,6 +12,8 @@ export class PersonaService {
   public URL: string = 'http://localhost:8080/personas';
   private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
   public persona: Persona = new Persona();
+
+  
   constructor(private http: HttpClient, private router: Router, private activatedRouter: ActivatedRoute) { }
 
    getPersonas(page: number): Observable<any> {
@@ -26,7 +28,6 @@ export class PersonaService {
           return persona;
         });
         return response;
-
       }),
     );
 

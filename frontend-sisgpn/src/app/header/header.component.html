@@ -1,52 +1,92 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark px2">
-    <div class="side-nav-button p-2 me-3 text-light">
-        <i class="fa-solid fa-bars fa-2xl" style="color: #dfe2e7;"></i>
-    </div>
-
-    <a class ="navbar-brand px-4">Sistema de Gestión Vehicular - Policía Nacional</a>
-
-   
-
-    <div class="navbar-collapse">
-        <ul class="navbar-nav me-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Gestión administrativa</a> 
-                <ul class="dropdown-menu dropdown-menu-dark" >
-                    <li><a *ngIf="isAdmin" class="nav-link" routerLink="/listadopersonas">Personal policial</a></li>
-                    <li><a *ngIf="isAdmin" class="nav-link" routerLink="/listadovehiculos">Vehiculos</a></li>
-                    <li><a class="nav-link" routerLink="/">Contratos</a></li>
-                    <li><a class="nav-link" routerLink="/">Dependencias</a></li>
-                </ul>
-             </li>
-
-            <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Operaciones</a> 
-               <ul class="dropdown-menu dropdown-menu-dark" >
-                    <li><a class="dropdown-item" href="#">Asignar vehículo a personal policial</a></li>
-                    <li><a class="dropdown-item" href="#">Asignar vehículo a dependencia</a></li>
-                    <li><a class="dropdown-item" href="#">Asignar personal policial a dependencia</a></li>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Sistema de Gestión Vehicular Policia Nacional</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
                 
-               </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+              Gestión Administrativa
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/listadopersonas">Gestión de Personal Policial</a></li>
+              <li><a class="dropdown-item" routerLink="/listadovehiculos">Gestión Vehicular</a></li>
+              
+              <li>
+              <a class="dropdown-item" href="#">Gestión de Dependencias &raquo; </a>
+              <ul class="dropdown-menu dropdown-submenu">
+                <li>
+                  <a class="dropdown-item" routerLink="/listadodistritos">Distritos</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Circuitos</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Subircuitos</a>
+                </li>
+              </ul>
             </li>
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Mantenimiento Vehicular</a> 
-                  <ul class="dropdown-menu dropdown-menu-dark" >
-                    <li><a class="dropdown-item" href="#">Solicitar mantenimiento</a></li>
-                    <li><a class="dropdown-item" href="#">Generar Orden de trabajo</a></li>
-                       
-                  </ul>
-             </li>
-       
+              <li><a class="dropdown-item" href="#">Gestión de Contratos</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Asignaciones
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Mantenimiento Vehicular
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Gestión de Personal Policial</a></li>
+              <li><a class="dropdown-item" href="#">Gestión Vehicular</a></li>
+              <li><a class="dropdown-item" href="#">Gestión de Dependencias</a></li>
+              <li><a class="dropdown-item" href="#">Gestión de Contratos</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Reportes
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
         </ul>
+      </div>
     </div>
 
     <div class="profile-logo dropstart">
-        <button class="btn btn-outline-light" (click)="logout()" >
-            Cerrar Sesión   
-        </button>
-        
-    </div>
 
-    
-</nav>
+        <button type="button" class="btn btn-light" (click)="logout()" >
+          SALIR       
+        </button>
+      
+  </div>
+
+  </nav>

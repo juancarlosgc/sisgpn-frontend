@@ -1,4 +1,10 @@
 .card {
     position: relative;
-    margin-top: 100px;
+    margin-top: 50px;
+    width: 95%;
+    height: auto;
+    padding: 5px;
+    margin-left: 35px;
 }
+
+

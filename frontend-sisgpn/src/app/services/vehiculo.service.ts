@@ -46,7 +46,7 @@ export class VehiculoService {
 
 
   updateVehiculo(vehiculo: Vehiculo): Observable<Vehiculo> {
-    return this.http.put<Vehiculo>(`${this.URL}/editar`, this.vehiculo, { headers: this.httpHeaders })
+    return this.http.put<Vehiculo>(`${this.URL}/editar`, vehiculo, { headers: this.httpHeaders })
   }
 
   deleteVehiculo(id: number): Observable<Vehiculo> {

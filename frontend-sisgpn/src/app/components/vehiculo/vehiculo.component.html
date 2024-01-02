@@ -7,7 +7,7 @@
       </div>
 
       <div class="my-2 text-left">
-        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/personas/form']">Nuevo registro</button>
+        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/vehiculos/form']">Nuevo registro</button>
       </div>
       
       
@@ -50,7 +50,7 @@
           <td>{{vehiculo.observaciones}}</td>
 
           <td>
-            <button type="button" name="btnEditar" [routerLink]="['/personas/form', vehiculo.idVehiculo]" class="btn btn-primary">Editar</button>
+            <button type="button" name="btnEditar" [routerLink]="['/vehiculos/form', vehiculo.idVehiculo]" class="btn btn-primary">Editar</button>
           </td>
           <td>
             <button type="button" name="btnEliminar" (click)="deleteVehiculo(vehiculo)" class="btn btn-danger">Eliminar</button>
@@ -59,7 +59,7 @@
         
       </tbody>
     </table>
-    <paginator-nav *ngIf="paginador" [paginador] = "paginador"></paginator-nav>
+    <paginatorvehiculo-nav *ngIf="paginadorVehiculo" [paginadorVehiculo] = "paginadorVehiculo"></paginatorvehiculo-nav>
   </div>
 
   <div>

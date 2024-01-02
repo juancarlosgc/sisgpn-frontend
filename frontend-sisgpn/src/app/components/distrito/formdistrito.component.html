@@ -1,0 +1,97 @@
+
+<style>
+    .card{
+        top: 100px;
+        width: 800px;
+        margin: 0 auto;
+        float: none;
+    }
+    
+    .card-body{
+        padding: 20px;
+    
+    }
+    .card-title{
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        color: #000;
+        padding-bottom: 20px;
+    }
+    .form-control{
+        margin-bottom: 10px;
+        padding: 5px;
+    } 
+    
+    .btn-primary{
+        margin-top: 20px;
+        margin-left: 510px;
+        margin-bottom: 20px;
+        width: 150px;
+        height: 40px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+    }
+    </style>
+    
+    <div class="card">
+        <div class="card-header">
+            <div class="card-body">
+                <h4 class="card-title">Formulario de Distritos</h4>
+    
+            <form #distritoForm="ngForm">
+                <div class="form-group row">
+                    <label for="cedula" class="col-form-label col-sm-3">Código de Distrito</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="distrito.codigoDistrito" name="codigoDistrito" required #codigoDistrito="ngModel">
+                        <div class="alert alert-danger" *ngIf="codigoDistrito.invalid && (codigoDistrito.touched)">
+                            <div *ngIf="codigoDistrito.errors">
+                                El código de distrito es requerido
+                            </div>
+                         </div>
+                    </div>
+                </div>
+    
+                <div class="form-group row">
+                    <label for="apellidos" class="col-form-label col-sm-3">Nombre de Distrito</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="distrito.nombreDistrito" name="nombreDistrito" required #nombreDistrito="ngModel">
+                        <div class="alert alert-danger" *ngIf="nombreDistrito.invalid && (nombreDistrito.touched)">
+                            <div *ngIf="nombreDistrito.errors">
+                                El nombre de distrito es requerido
+                            </div>
+                         </div>
+                    </div>
+                </div>
+    
+                <div class="form-group row">
+                    <label for="nombres" class="col-form-label col-sm-3">Parroquia</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="distrito.parroquia" name="parroquia" required #parroquia="ngModel">
+                        <div class="alert alert-danger" *ngIf="parroquia.invalid && (parroquia.touched)">
+                            <div *ngIf="parroquia.errors">
+                                Los parroquia es requerida
+                            </div>
+                         </div> 
+                    </div>
+                </div>
+
+               
+    
+              
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                             <button class="btn btn-primary" role="button" (click)='createDistrito()' *ngIf="!distrito.idDistrito else elseBlock" [disabled]="!distritoForm.form.valid">Guardar</button>
+                        <ng-template #elseBlock>
+                            <button class="btn btn-primary" role="button" (click)='updateDistrito()' [disabled]="!distritoForm.form.valid"> Actualizar  </button>
+                        </ng-template>
+                    </div>
+                </div>
+            </form>
+             </div>
+        </div>
+    </div>
+    

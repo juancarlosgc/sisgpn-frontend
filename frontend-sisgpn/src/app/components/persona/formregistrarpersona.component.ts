@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Persona } from 'src/app/model/persona';
 import { PersonaService } from 'src/app/services/persona.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import swal from 'sweetalert2';
+import   swal  from 'sweetalert2';
 
 @Component({
   selector: 'app-formregistrarpersona',
@@ -15,7 +15,6 @@ export class FormregistrarpersonaComponent implements OnInit{
   private titulo: string = "Formulario de Registro de Persona"
   
   
-  
   constructor(private personaService: PersonaService,
               private router: Router,
               private activatedRoute: ActivatedRoute) { }
@@ -23,6 +22,7 @@ export class FormregistrarpersonaComponent implements OnInit{
   ngOnInit(): void {
     this.cargarPersona();
   }
+  
    createPersona(): void{
       this.personaService.createPersona(this.persona)
       .subscribe(persona => { 
