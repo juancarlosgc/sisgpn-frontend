@@ -5,6 +5,6 @@ export class Distrito {
     codigoDistrito: string;
     nombreDistrito: string;
     parroquia: string;
-    circuitos: Circuito[]= [];
+    //circuitos: Circuito[]= [];
     //circuitos: Array<Circuito>=[];  //otra forma de declarar un arreglo
 }

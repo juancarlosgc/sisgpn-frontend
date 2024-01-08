@@ -8,5 +8,6 @@ export class Circuito {
     subcircuitos: Subcircuito[] = [];
     distrito: Distrito;
     idDistrito: number;
+    nombreDistrito: string;
 
 }

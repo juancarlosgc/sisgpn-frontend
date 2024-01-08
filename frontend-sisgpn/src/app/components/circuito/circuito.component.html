@@ -30,7 +30,7 @@
         <tr *ngFor="let circuito of circuitos">
           <td>{{circuito.codigoCircuito}}</td>
           <td>{{circuito.nombreCircuito}}</td>
-          <td>{{circuito.idDistrito}}</td>
+          <td>{{circuito.nombreDistrito}}</td>
           <td>
             <button type="button" name="btnEditar" [routerLink]="['/circuitos/form', circuito.idCircuito]" class="btn btn-primary">Editar</button>
           </td>
