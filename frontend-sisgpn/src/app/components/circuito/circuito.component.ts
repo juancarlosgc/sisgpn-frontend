@@ -19,7 +19,9 @@ export class CircuitoComponent implements OnInit{
   distritos: Distrito[] = [];
   paginadorCircuito: any;
 
-  constructor(private circuitoServicio: CircuitoService, private activatedRoute: ActivatedRoute, private util: UtilService) { }
+  constructor(private circuitoServicio: CircuitoService, 
+              private activatedRoute: ActivatedRoute, 
+              private util: UtilService) { }
 
   ngOnInit(): void {
     this.isAdmin = this.util.isAdmin();

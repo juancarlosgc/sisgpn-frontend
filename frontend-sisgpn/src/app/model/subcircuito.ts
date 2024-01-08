@@ -5,4 +5,6 @@ export class Subcircuito {
     codigoSubcircuito: string;
     nombreSubcircuito: string;
     circuito: Circuito
+    idCircuito: number;
+    nombreCircuito: string;
 }

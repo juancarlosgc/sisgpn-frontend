@@ -2,7 +2,7 @@
   <div class="card-header"></div>
   <div class="card-body">
     <h5 class="card-title">Listado del Circuitos</h5>
-    <div *ngIf="circuitos.length==0" class="alert alert-info">
+    <div *ngIf="circuitos.length==0" class="alert alert-info col-sm-3">
       No hay registros en la base de datos!
     </div>
 
@@ -16,12 +16,12 @@
         <tr>
             <th>Código de Circuito</th>
             <th>Nombre de Circuito</th>
-            <th>Nombre de Distrito</th>
+            <th>DISTRITO ASIGNADO</th>
             <th>
-              Editar
+              Acción 
             </th>
             <th>
-              Eliminar
+              Acción
             </th>
         </tr>
     </thead>
@@ -32,10 +32,10 @@
           <td>{{circuito.nombreCircuito}}</td>
           <td>{{circuito.nombreDistrito}}</td>
           <td>
-            <button type="button" name="btnEditar" [routerLink]="['/circuitos/form', circuito.idCircuito]" class="btn btn-primary">Editar</button>
+            <button class="col-sm-1" type="button"  name="btnEditar" [routerLink]="['/circuitos/form', circuito.idCircuito]" class="btn btn-primary">Editar</button>
           </td>
           <td>
-            <button type="button" name="btnEliminar" (click)="deleteCircuito(circuito)" class="btn btn-danger">Eliminar</button>
+            <button class="col-sm-1" type="button" name="btnEliminar" (click)="deleteCircuito(circuito)" class="btn btn-danger">Eliminar</button>
           </td>
     </tbody>
     
