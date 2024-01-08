@@ -15,7 +15,7 @@ export class DistritoComponent implements OnInit {
 
   isAdmin: any;
   distritos: Distrito[] = [];
-  paginador: any;
+  paginadorDistrito: any;
 
   constructor(private distritoServicio: DistritoService, private activatedRoute: ActivatedRoute, private util: UtilService) { }
 
@@ -36,7 +36,7 @@ export class DistritoComponent implements OnInit {
           })
         ).subscribe(response => {
           this.distritos = response.content as Distrito[];
-          this.paginador = response;
+          this.paginadorDistrito = response;
 
         });
     }
@@ -60,8 +60,8 @@ export class DistritoComponent implements OnInit {
           response => {
             this.distritos = this.distritos.filter(dis => dis !== distrito)
             swal(
-              'Persona Eliminada!',
-              `Persona ${distrito.nombreDistrito} eliminada con éxito.`,
+              'Distrito Eliminado!',
+              `Distrito ${distrito.nombreDistrito} eliminado con éxito.`,
               'success'
             )
           }

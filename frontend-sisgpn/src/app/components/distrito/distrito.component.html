@@ -28,7 +28,6 @@
       <tbody>
         <tbody>
           <tr *ngFor="let distrito of distritos  ">
-         
           <td>{{distrito.codigoDistrito}}</td>
           <td>{{distrito.nombreDistrito}}</td>
           <td>{{distrito.parroquia}}</td>
@@ -40,7 +39,7 @@
           </td>
       </tbody>
     </table>
-    <paginator-nav *ngIf="paginador" [paginador] = "paginador"></paginator-nav>
+    <paginatordistrito-nav *ngIf="paginadorDistrito" [paginadorDistrito] = "paginadorDistrito"></paginatordistrito-nav>
   </div>
 
   <div>

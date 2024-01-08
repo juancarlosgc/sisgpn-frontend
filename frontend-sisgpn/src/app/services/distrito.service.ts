@@ -10,7 +10,7 @@ import { Observable, map } from 'rxjs';
 export class DistritoService {
   public URL: string = 'http://localhost:8080/distritos';
   private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
-  public persona: Distrito = new Distrito();
+  //public distrito: Distrito = new Distrito();
 
   constructor(private http: HttpClient, private router: Router, private activatedRouter: ActivatedRoute) { }
 

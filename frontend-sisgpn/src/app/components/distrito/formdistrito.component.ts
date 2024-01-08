@@ -11,7 +11,7 @@ import swal from 'sweetalert2';
 })
 export class FormdistritoComponent implements OnInit {
 
-  private URL: string = 'http://localhost:8080/personas';
+ // private URL: string = 'http://localhost:8080/distritos';
   public distrito: Distrito = new Distrito();
 
   constructor(private distritoService: DistritoService,
@@ -19,8 +19,10 @@ export class FormdistritoComponent implements OnInit {
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-
+    this.cargarDistrito();
   }
+
+
   createDistrito(): void {
     this.distritoService.createDistrito(this.distrito)
       .subscribe(distrito => {
@@ -30,7 +32,6 @@ export class FormdistritoComponent implements OnInit {
       }
       )
   }
-
 
   cargarDistrito(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -46,7 +47,7 @@ export class FormdistritoComponent implements OnInit {
     this.distritoService.updateDistrito(this.distrito)
       .subscribe(distrito => {
         this.router.navigate(['/listadodistritos'])
-        swal('Vehículo Actualizada', `Distrito ${this.distrito.nombreDistrito} actualizado con éxito!`, 'success')
+        swal('Distrito Actualizado', `Distrito ${this.distrito.nombreDistrito} actualizado con éxito!`, 'success')
       }
       )
   }

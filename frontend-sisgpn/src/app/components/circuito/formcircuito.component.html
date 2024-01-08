@@ -1,0 +1,90 @@
+<style>
+    .card{
+        top: 100px;
+        width: 800px;
+        margin: 0 auto;
+        float: none;
+    }
+    
+    .card-body{
+        padding: 20px;
+    
+    }
+    .card-title{
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        color: #000;
+        padding-bottom: 20px;
+    }
+    .form-control{
+        margin-bottom: 10px;
+        padding: 5px;
+    } 
+    
+    .btn-primary{
+        margin-top: 20px;
+        margin-left: 510px;
+        margin-bottom: 20px;
+        width: 150px;
+        height: 40px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+    }
+    </style>
+    
+    <div class="card">
+        <div class="card-header">
+            <div class="card-body">
+                <h4 class="card-title">Formulario de Circuitos</h4>
+    
+            <form #circuitoForm="ngForm">
+                <div class="form-group row">
+                    <label for="cedula" class="col-form-label col-sm-3">Código de Circuito</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="circuito.codigoCircuito" name="codigoCircuito" required #codigoCircuito="ngModel">
+                        <div class="alert alert-danger" *ngIf="codigoCircuito.invalid && (codigoCircuito.touched)">
+                            <div *ngIf="codigoCircuito.errors">
+                                El código de circuito es requerido
+                            </div>
+                         </div>
+                    </div>
+                </div>
+    
+                <div class="form-group row">
+                    <label for="apellidos" class="col-form-label col-sm-3">Nombre de Circuito</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="circuito.nombreCircuito" name="nombreCircuito" required #nombreCircuito="ngModel">
+                        <div class="alert alert-danger" *ngIf="nombreCircuito.invalid && (nombreCircuito.touched)">
+                            <div *ngIf="nombreCircuito.errors">
+                                El nombre de circuito es requerido
+                            </div>
+                         </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="rango" class="col-form-label col-sm-3">Distrito</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" [(ngModel)]="circuito.idDistrito" name="codigodistrito" required #codigoDistrito="ngModel">
+                           <option *ngFor="let opcion of distrito" [ngValue]="opcion.idDistrito">{{opcion.nombreDistrito}}</option>
+                        </select>
+                    </div>
+                </div>
+    
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                             <button class="btn btn-primary" role="button" (click)='createCircuito()' *ngIf="!circuito.idCircuito else elseBlock" [disabled]="!circuitoForm.form.valid">Guardar</button>
+                        <ng-template #elseBlock>
+                            <button class="btn btn-primary" role="button" (click)='updateCircuito()' [disabled]="!circuitoForm.form.valid"> Actualizar  </button>
+                        </ng-template>
+                    </div>
+                </div>
+            </form>
+             </div>
+        </div>
+    </div>
+    

@@ -16,17 +16,17 @@
               Gestión Administrativa
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" routerLink="/listadopersonas">Gestión de Personal Policial</a></li>
-              <li><a class="dropdown-item" routerLink="/listadovehiculos">Gestión Vehicular</a></li>
+              <li><a class="dropdown-item" routerLink="/listadopersonas">Personal Policial</a></li>
+              <li><a class="dropdown-item" routerLink="/listadovehiculos">Flota Vehicular</a></li>
               
               <li>
-              <a class="dropdown-item" href="#">Gestión de Dependencias &raquo; </a>
+              <a class="dropdown-item" href="#">Dependencias &raquo; </a>
               <ul class="dropdown-menu dropdown-submenu">
                 <li>
                   <a class="dropdown-item" routerLink="/listadodistritos">Distritos</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">Circuitos</a>
+                  <a class="dropdown-item" routerLink="/listadocircuitos">Circuitos</a>
                 </li>
                 <li>
                   <a class="dropdown-item" href="#">Subircuitos</a>
@@ -34,9 +34,9 @@
               </ul>
             </li>
 
-              <li><a class="dropdown-item" href="#">Gestión de Contratos</a></li>
+              <li><a class="dropdown-item" href="#">Contratos</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#">Tipos de Mantenimientos</a></li>
             </ul>
           </li>
 
@@ -45,10 +45,13 @@
               Asignaciones
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Asignacion de Vehículos</a></li>
+              <li><a class="dropdown-item" href="#">Asignación de Dependencias</a></li>
+              <li><a class="dropdown-item" href="#">Asignación de Personal Policial</a></li>
+              <!--
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
+              -->
             </ul>
           </li>
 
@@ -57,12 +60,9 @@
               Mantenimiento Vehicular
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Gestión de Personal Policial</a></li>
-              <li><a class="dropdown-item" href="#">Gestión Vehicular</a></li>
-              <li><a class="dropdown-item" href="#">Gestión de Dependencias</a></li>
-              <li><a class="dropdown-item" href="#">Gestión de Contratos</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#">Solicitud de Mantenimiento</a></li>
+              <li><a class="dropdown-item" href="#">Registro de Mantenimiento</a></li>
+              <li><a class="dropdown-item" href="#">Orden de Trabajo</a></li>
             </ul>
           </li>
 
@@ -71,10 +71,9 @@
               Reportes
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#">...</a></li>
+              <li><a class="dropdown-item" href="#">...</a></li>
+
             </ul>
           </li>
         </ul>
@@ -82,7 +81,6 @@
     </div>
 
     <div class="profile-logo dropstart">
-
         <button type="button" class="btn btn-light" (click)="logout()" >
           SALIR       
         </button>

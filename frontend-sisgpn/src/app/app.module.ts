@@ -17,6 +17,10 @@ import { FormvehiculoComponent } from './components/vehiculo/formvehiculo.compon
 import { PaginatorvehiculoComponent } from './components/paginator/paginatorvehiculo.component';
 import { DistritoComponent } from './components/distrito/distrito.component';
 import { FormdistritoComponent } from './components/distrito/formdistrito.component';
+import { PaginatordistritoComponent } from './components/paginator/paginatordistrito.component';
+import { CircuitoComponent } from './components/circuito/circuito.component';
+import { FormcircuitoComponent } from './components/circuito/formcircuito.component';
+import { PaginatorcircuitoComponent } from './components/paginator/paginatorcircuito.component';
 
 
 function initializeKeycloak(keycloak: KeycloakService) {
@@ -55,7 +59,13 @@ const routes: Routes = [
   { path: 'listadodistritos', component: DistritoComponent },
   { path: 'listadodistritos/page/:page', component: DistritoComponent },
   { path: 'distritos/form', component: FormdistritoComponent },
-  { path: 'distritos/form/:idDistrito', component: FormdistritoComponent }
+  { path: 'distritos/form/:idDistrito', component: FormdistritoComponent },
+
+  { path: 'circuito', component: CircuitoComponent },
+  { path: 'listadocircuitos', component: CircuitoComponent },
+  { path: 'listadocircuitos/page/:page', component: CircuitoComponent },
+  { path: 'circuitos/form', component: FormcircuitoComponent },
+  { path: 'circuitos/form/:idCircuito', component: FormcircuitoComponent }
 
   
 ];
@@ -72,7 +82,11 @@ const routes: Routes = [
     FormvehiculoComponent,
     PaginatorvehiculoComponent,
     DistritoComponent,
-    FormdistritoComponent
+    FormdistritoComponent,
+    PaginatordistritoComponent,
+    CircuitoComponent,
+    FormcircuitoComponent,
+    PaginatorcircuitoComponent
 
   ],
   imports: [
