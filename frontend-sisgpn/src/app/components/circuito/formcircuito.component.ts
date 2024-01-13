@@ -59,7 +59,6 @@ export class FormcircuitoComponent implements OnInit{
 
   cargarDistritos(): void {
     this.circuitoService.listDistritos().subscribe(distritos => this.distrito = distritos);
-    console.log("arreglo");
     console.log(this.distrito);
   }
 

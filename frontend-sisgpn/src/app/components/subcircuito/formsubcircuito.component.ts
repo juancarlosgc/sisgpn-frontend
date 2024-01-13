@@ -22,7 +22,6 @@ export class FormsubcircuitoComponent implements OnInit{
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    //CARGAR METODOS ******************************************************
     this.cargarSubcircuito();
     this.cargarCircuitos();
   }

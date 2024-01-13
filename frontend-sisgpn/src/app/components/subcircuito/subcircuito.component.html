@@ -32,7 +32,7 @@
             <td>{{subcircuito.nombreSubcircuito}}</td>
             <td>{{subcircuito.nombreCircuito}}</td>
             <td>
-              <button class="col-sm-1" type="button"  name="btnEditar" [routerLink]="['/subcircuitos/form', subcircuito.idCircuito]" class="btn btn-primary">Editar</button>
+              <button class="col-sm-1" type="button"  name="btnEditar" [routerLink]="['/subcircuitos/form', subcircuito.idSubcircuito]" class="btn btn-primary">Editar</button>
             </td>
             <td>
               <button class="col-sm-1" type="button" name="btnEliminar" (click)="deleteSubcircuito(subcircuito)" class="btn btn-danger">Eliminar</button>

@@ -34,7 +34,7 @@ export class DistritoService {
   
   getDistrito(id: number): Observable <Distrito>{
     return this.http.get<Distrito>(this.URL + '/ver/' + id);
-  };
+  }
 
 
   updateDistrito(distrito: Distrito): Observable<Distrito> {

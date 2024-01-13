@@ -24,6 +24,12 @@ import { PaginatorcircuitoComponent } from './components/paginator/paginatorcirc
 import { SubcircuitoComponent } from './components/subcircuito/subcircuito.component';
 import { FormsubcircuitoComponent } from './components/subcircuito/formsubcircuito.component';
 import { PaginatorsubcircuitoComponent } from './components/paginator/paginatorsubcircuito.component';
+import { DistritopersonaComponent } from './components/asignaciones/distritopersona/distritopersona.component';
+import { VehiculopersonaComponent } from './components/asignaciones/vehiculopersona/vehiculopersona.component';
+import { FormdistritopersonaComponent } from './components/asignaciones/distritopersona/formdistritopersona.component';
+import { MantenimientoComponent } from './components/mantenimiento/mantenimiento.component';
+import { FormmantenimientoComponent } from './components/mantenimiento/formmantenimiento.component';
+import { PaginatormantenimientoComponent } from './components/paginator/paginatormantenimiento.component';
 
 
 function initializeKeycloak(keycloak: KeycloakService) {
@@ -74,7 +80,19 @@ const routes: Routes = [
   { path: 'listadosubcircuitos', component: SubcircuitoComponent },
   { path: 'listadosubcircuitos/page/:page', component: SubcircuitoComponent },
   { path: 'subcircuitos/form', component: FormsubcircuitoComponent },
-  { path: 'subcircuitos/form/:idSubcircuito', component: FormsubcircuitoComponent }
+  { path: 'subcircuitos/form/:idSubcircuito', component: FormsubcircuitoComponent },
+
+  { path: 'distritopersona', component: DistritopersonaComponent },
+  { path: 'listadodistritopersona', component: DistritopersonaComponent },
+  { path: 'listadodistritopersona/page/:page', component: DistritopersonaComponent },
+  { path: 'distritopersona/form', component: FormdistritopersonaComponent },
+  { path: 'distritopersona/form/:idDistritoPersona', component: FormdistritopersonaComponent },
+
+  { path: 'mantenimiento', component: MantenimientoComponent },
+  { path: 'listadomantenimiento', component: MantenimientoComponent },
+  { path: 'listadomantenimiento/page/:page', component: MantenimientoComponent },
+  { path: 'mantenimiento/form', component: FormmantenimientoComponent },
+  { path: 'mantenimiento/form/:idMantenimiento', component: FormmantenimientoComponent }
 
   
 ];
@@ -98,7 +116,13 @@ const routes: Routes = [
     PaginatorcircuitoComponent,
     SubcircuitoComponent,
     PaginatorsubcircuitoComponent,
-    FormsubcircuitoComponent
+    FormsubcircuitoComponent,
+    DistritopersonaComponent,
+    VehiculopersonaComponent,
+    FormdistritopersonaComponent,
+    MantenimientoComponent,
+    FormmantenimientoComponent,
+    PaginatormantenimientoComponent
 
   ],
   imports: [

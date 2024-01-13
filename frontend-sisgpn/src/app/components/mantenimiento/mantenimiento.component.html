@@ -1,0 +1,56 @@
+<div class="card border-secondary ">
+    <div class="card-header"></div>
+    <div class="card-body">
+      <h5 class="card-title">Listado de Tipos de Mantenimientos</h5>
+      <div *ngIf="mantenimientos.length==0" class="alert alert-info col-sm-3">
+        No hay registros en la base de datos!
+      </div>
+
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/mantenimiento/form']">Nuevo registro</button>
+      </div>
+      
+      
+  <table class="table table-bordered table-striped" *ngIf="mantenimientos.length>0">
+      <thead>
+          <tr>
+              <th>Código</th>
+              <th>Nombre del mantenimiento</th>
+              <th>Costo</th>
+              <th>
+                Editar
+              </th>
+              <th>
+                Eliminar
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+        <tbody>
+          <tr *ngFor="let mantenimiento of mantenimientos  ">
+         
+          <td>{{mantenimiento.codigoMantenimiento}}</td>
+          <td>{{mantenimiento.nombreMantenimiento}}</td>
+          <td>{{mantenimiento.costoMantenimiento}}</td>
+          
+          <td>
+            <button type="button" name="btnEditar" [routerLink]="['/mantenimiento/form', mantenimiento.idMantenimiento]" class="btn btn-primary">Editar</button>
+          </td>
+          <td>
+            <button type="button" name="btnEliminar" (click)="deleteMantenimiento(mantenimiento)" class="btn btn-danger">Eliminar</button>
+          </td>
+  
+        </tr>
+        
+      </tbody>
+    </table>
+    <paginatormantenimiento-nav *ngIf="paginador" [paginadorMantenimiento] = "paginador"></paginatormantenimiento-nav>
+  </div>
+
+  <div>
+  
+  </div>
+
+
+    
+

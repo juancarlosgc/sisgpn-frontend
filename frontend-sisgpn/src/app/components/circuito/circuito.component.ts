@@ -76,7 +76,6 @@ export class CircuitoComponent implements OnInit{
 
   cargarDistritos(): void {
     this.circuitoServicio.listDistritos().subscribe(data => this.distritos = data);
-
   }
 
 }

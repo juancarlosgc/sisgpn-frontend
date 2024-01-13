@@ -1,0 +1,95 @@
+
+<style>
+    .card{
+        top: 100px;
+        width: 800px;
+        margin: 0 auto;
+        float: none;
+    }
+    
+    .card-body{
+        padding: 20px;
+    
+    }
+    .card-title{
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        color: #000;
+        padding-bottom: 20px;
+    }
+    .form-control{
+        margin-bottom: 10px;
+        padding: 5px;
+    } 
+    
+    .btn-primary{
+        margin-top: 20px;
+        margin-left: 510px;
+        margin-bottom: 20px;
+        width: 150px;
+        height: 40px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+    }
+    </style>
+    
+    <div class="card">
+        <div class="card-header">
+            <div class="card-body">
+                <h4 class="card-title">Formulario de Mantenimiento Vehicular</h4>
+    
+            <form #mantenimientoForm="ngForm">
+                <div class="form-group row">
+                    <label for="cedula" class="col-form-label col-sm-3">Código </label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="mantenimiento.codigoMantenimiento" name="codigo" required #codigo="ngModel">
+                        <div class="alert alert-danger" *ngIf="codigo.invalid && (codigo.touched)">
+                            <div *ngIf="codigo.errors">
+                                El código es requerida
+                            </div>
+                         </div>
+                    </div>
+                </div>
+    
+                <div class="form-group row">
+                    <label for="apellidos" class="col-form-label col-sm-3">Nombre</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="mantenimiento.nombreMantenimiento" name="apellidos" required #apellidos="ngModel">
+                        <div class="alert alert-danger" *ngIf="apellidos.invalid && (apellidos.touched)">
+                            <div *ngIf="apellidos.errors">
+                                El nombre del mantenimiento es requerido
+                            </div>
+                         </div>
+                    </div>
+                </div>
+    
+                <div class="form-group row">
+                    <label for="nombres" class="col-form-label col-sm-3">Costo</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="mantenimiento.costoMantenimiento" name="nombres" required #nombres="ngModel">
+                        <div class="alert alert-danger" *ngIf="nombres.invalid && (nombres.touched)">
+                            <div *ngIf="nombres.errors">
+                                El costo es requerido
+                            </div>
+                         </div> 
+                    </div>
+                </div>         
+               
+  
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                             <button class="btn btn-primary" role="button" (click)='createMantenimiento()' *ngIf="!mantenimiento.idMantenimiento else elseBlock" [disabled]="!mantenimientoForm.form.valid">Guardar</button>
+                        <ng-template #elseBlock>
+                            <button class="btn btn-primary" role="button" (click)='updateMantenimiento()' [disabled]="!mantenimientoForm.form.valid"> Actualizar  </button>
+                        </ng-template>
+                    </div>
+                </div>
+            </form>
+             </div>
+        </div>
+    </div>
+    

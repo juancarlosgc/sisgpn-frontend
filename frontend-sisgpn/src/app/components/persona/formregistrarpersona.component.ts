@@ -10,6 +10,7 @@ import   swal  from 'sweetalert2';
   styleUrls: ['./formregistrarpersona.component.css']
 })
 export class FormregistrarpersonaComponent implements OnInit{
+
   private URL: string = 'http://localhost:8080/personas';
   public persona: Persona = new Persona();
   private titulo: string = "Formulario de Registro de Persona"
@@ -40,7 +41,8 @@ export class FormregistrarpersonaComponent implements OnInit{
         this.personaService.getPersona(idPersona).subscribe( (persona) => this.persona = persona)
       }
       }
-    )}
+    )
+  }
 
   updatePersona(): void{
     this.personaService.updatePersona(this.persona)
