@@ -34,6 +34,7 @@ import { ItemComponent } from './components/item/item.component';
 import { FormitemComponent } from './components/item/formitem.component';
 import { DistritovehiculoComponent } from './components/asignaciones/distritovehiculo/distritovehiculo.component';
 import { FormdistritovehiculoComponent } from './components/asignaciones/distritovehiculo/formdistritovehiculo.component';
+import { FormvehiculopersonaComponent } from './components/asignaciones/vehiculopersona/formvehiculopersona.component';
 
 
 
@@ -109,9 +110,13 @@ const routes: Routes = [
   { path: 'listadodistritovehiculo', component: DistritovehiculoComponent },
   { path: 'listadodistritovehiculo/page/:page', component: DistritovehiculoComponent },
   { path: 'distritovehiculo/form', component: FormdistritovehiculoComponent },
-  { path: 'distritovehiculo/form/:idDistritoVehiculo', component: FormdistritovehiculoComponent }
+  { path: 'distritovehiculo/form/:idDistritoVehiculo', component: FormdistritovehiculoComponent },
 
-  
+  { path: 'vehiculopersona', component: VehiculopersonaComponent },
+  { path: 'listadovehiculopersona', component: VehiculopersonaComponent },
+  { path: 'listadovehiculopersona/page/:page', component: VehiculopersonaComponent },
+  { path: 'vehiculopersona/form', component: FormvehiculopersonaComponent },
+  { path: 'vehiculopersona/form/:idVehiculoPersona', component: FormvehiculopersonaComponent }  
 ];
 
 @NgModule({
@@ -143,7 +148,8 @@ const routes: Routes = [
     ItemComponent,
     FormitemComponent,
     DistritovehiculoComponent,
-    FormdistritovehiculoComponent
+    FormdistritovehiculoComponent,
+    FormvehiculopersonaComponent
 
   ],
   imports: [
