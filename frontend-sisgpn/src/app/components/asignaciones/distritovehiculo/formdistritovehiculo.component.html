@@ -1,0 +1,82 @@
+<style>
+    .card{
+        top: 100px;
+        width: 800px;
+        margin: 0 auto;
+        float: none;
+    }
+    
+    .card-body{
+        padding: 20px;
+    
+    }
+    .card-title{
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        color: #000;
+        padding-bottom: 20px;
+    }
+    .form-control{
+        margin-bottom: 10px;
+        padding: 5px;
+    } 
+    
+    .btn-primary{
+        margin-top: 20px;
+        margin-left: 510px;
+        margin-bottom: 20px;
+        width: 150px;
+        height: 40px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+    }
+    </style>
+    
+    <div class="card">
+        <div class="card-header">
+            <div class="card-body">
+                <h4 class="card-title">Formulario de Asignación Vehículos a Distritos</h4>
+    
+            <form #distritovehiculoForm="ngForm">
+                <div class="form-group row">
+                    <label for="idvehiculo" class="col-form-label col-sm-3">Personal</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" [(ngModel)]="distritoVehiculo.idVehiculo" name="idvehiculo" required #idvehiculo="ngModel">
+                           <option *ngFor="let opcion of vehiculos" [ngValue]="opcion.idVehiculo">{{opcion.marca}} / {{opcion.placa}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="idSubcircuito" class="col-form-label col-sm-3">Subcircuito</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" [(ngModel)]="distritoVehiculo.idSubcircuito" name="idSubcircuito" required #idSubcircuito="ngModel">
+                           <option *ngFor="let opcion of subcircuitos" [ngValue]="opcion.idSubcircuito">{{opcion.nombreSubcircuito}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="fechaNacimiento" class="col-form-label col-sm-3">Fecha</label>
+                    <div class="col-sm-8">
+                        <input type="date" class="form-control" [(ngModel)]="distritoVehiculo.fecha" name="fechaNacimiento" required #fechaNacimiento="ngModel" >   
+                    </div>
+                </div>
+    
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                             <button class="btn btn-primary" role="button" (click)='createDistritoVehiculo()' *ngIf="!distritoVehiculo.idDistritoVehiculo else elseBlock" [disabled]="!distritovehiculoForm.form.valid">Guardar</button>
+                        <ng-template #elseBlock>
+                            <button class="btn btn-primary" role="button" (click)='updateDistritoVehiculo()' [disabled]="!distritovehiculoForm.form.valid"> Actualizar  </button>
+                        </ng-template>
+                    </div>
+                </div>
+            </form>
+             </div>
+        </div>
+    </div>
+    

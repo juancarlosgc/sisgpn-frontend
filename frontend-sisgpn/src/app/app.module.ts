@@ -32,6 +32,9 @@ import { FormmantenimientoComponent } from './components/mantenimiento/formmante
 import { PaginatormantenimientoComponent } from './components/paginator/paginatormantenimiento.component';
 import { ItemComponent } from './components/item/item.component';
 import { FormitemComponent } from './components/item/formitem.component';
+import { DistritovehiculoComponent } from './components/asignaciones/distritovehiculo/distritovehiculo.component';
+import { FormdistritovehiculoComponent } from './components/asignaciones/distritovehiculo/formdistritovehiculo.component';
+
 
 
 function initializeKeycloak(keycloak: KeycloakService) {
@@ -100,7 +103,13 @@ const routes: Routes = [
   { path: 'listadoitem', component: ItemComponent },
   { path: 'listadoitem/page/:page', component: ItemComponent },
   { path: 'item/form', component: FormitemComponent },
-  { path: 'item/form/:idItem', component: FormitemComponent }
+  { path: 'item/form/:idItem', component: FormitemComponent },
+
+  { path: 'distritovehiculo', component: DistritovehiculoComponent },
+  { path: 'listadodistritovehiculo', component: DistritovehiculoComponent },
+  { path: 'listadodistritovehiculo/page/:page', component: DistritovehiculoComponent },
+  { path: 'distritovehiculo/form', component: FormdistritovehiculoComponent },
+  { path: 'distritovehiculo/form/:idDistritoVehiculo', component: FormdistritovehiculoComponent }
 
   
 ];
@@ -132,7 +141,9 @@ const routes: Routes = [
     FormmantenimientoComponent,
     PaginatormantenimientoComponent,
     ItemComponent,
-    FormitemComponent
+    FormitemComponent,
+    DistritovehiculoComponent,
+    FormdistritovehiculoComponent
 
   ],
   imports: [

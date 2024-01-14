@@ -54,7 +54,7 @@ export class DistritopersonaComponent implements OnInit{
   deleteDistritoPersona(distritopersona: Distritopersona): void {
     swal({
       title: 'Está seguro?',
-      text: `¿Seguro que desea eliminar a ${distritopersona.idDistritoPersona} ${distritopersona}?`,
+      text: `¿Seguro que desea eliminar la asignación?`,
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
@@ -67,8 +67,8 @@ export class DistritopersonaComponent implements OnInit{
           response => {
             this.distritospersonas = this.distritospersonas.filter(dis => dis !== distritopersona)
             swal(
-              'Distrito Eliminado!',
-              `Distrito ${distritopersona.idDistritoPersona} eliminado con éxito.`,
+              'Asignación Eliminada!',
+              `Asignación eliminada con éxito.`,
               'success'
             )
           }

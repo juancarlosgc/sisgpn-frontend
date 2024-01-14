@@ -39,7 +39,7 @@ export class FormdistritopersonaComponent implements OnInit{
     this.distritoPersonaService.createDistritoPersona(this.distritopersona)
       .subscribe(data => {
         this.router.navigate(['/listadodistritopersona'])
-        swal('Nuevo Asignación', `  ${data.idDistritoPersona} creada con éxito!`, 'success')
+        swal('Nuevo Asignación', `creada con éxito!`, 'success')
       }
       )
   }
@@ -58,7 +58,7 @@ export class FormdistritopersonaComponent implements OnInit{
     this.distritoPersonaService.updateDistritoPersona(this.distritopersona)
       .subscribe(circuito => {
         this.router.navigate(['/listadodistritopersona'])
-        swal('Asignación Actualizada', ` ${this.distritopersona.idDistritoPersona} actualizado con éxito!`, 'success')
+        swal('Asignación ', `actualizado con éxito!`, 'success')
       }
       )
   }

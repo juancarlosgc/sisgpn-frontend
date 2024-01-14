@@ -1,0 +1,50 @@
+<div class="card border-secondary ">
+    <div class="card-header"></div>
+    <div class="card-body">
+      <h5 class="card-title">Listado de Vehículos por Subcircuito</h5>
+      <div *ngIf="distritosvehiculos.length==0" class="alert alert-info col-sm-3">
+        No hay registros en la base de datos!
+      </div>
+  
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/distritovehiculo/form']">Nuevo registro</button>
+      </div>
+      
+      
+  <table class="table table-bordered table-striped" *ngIf="distritosvehiculos.length>0">
+      <thead>
+          <tr>
+              <th>Vehículo / Placa</th>
+              <th>Subcircuito</th>
+              <th>Fecha</th>
+              <th>
+                Acción 
+              </th>
+              <th>
+                Acción
+              </th>
+          </tr>
+      </thead>
+  
+        <tbody>
+          <tr *ngFor="let opcion of distritosvehiculos">
+            <td>{{opcion.marca}} / {{opcion.placa}}</td>
+            <td>{{opcion.nombreSubcircuito}}</td>
+            <td>{{opcion.fecha}}</td>
+            <td>
+              <button class="col-sm-1" type="button"  name="btnEditar" [routerLink]="['/distritovehiculo/form', opcion.idDistritoVehiculo]" class="btn btn-primary">Editar</button>
+            </td>
+            <td>
+              <button class="col-sm-1" type="button" name="btnEliminar" (click)="deleteDistritoVehiculo(opcion)" class="btn btn-danger">Eliminar</button>
+            </td>
+      </tbody>
+      
+    </table>
+   
+  </div>
+  
+  <div>
+  
+  </div>
+  
+
