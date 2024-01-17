@@ -1,0 +1,48 @@
+
+<div class="card border-secondary ">
+    <div class="card-header"></div>
+</div>
+  <div class="card-body">
+         <h5 class="card-title">Reclamos y Sugerencias</h5>
+        <div class="my-2 text-left">
+       <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/reclamo/form']">Nuevo registro</button>
+     </div>
+
+
+<div>
+  <label for="fechaInicio">Fecha de inicio:</label>
+  <input type="date" id="fechaInicio" [(ngModel)]="fechaInicio" />
+
+  <label for="fechaFin">Fecha de fin:</label>
+  <input type="date" id="fechaFin" [(ngModel)]="fechaFin" />
+
+  <button (click)="buscarRegistros()">Buscar</button>
+
+  <table class="table table-bordered table-striped" *ngIf="reclamos.length>0">
+    <thead>
+        <tr>
+            <th>Fecha Inicio</th>
+            <th>Fecha Fin</th>
+            <th>Nro. Incidentes</th>
+            <th>Tipo Incidente</th>
+            <th>Circuito</th>
+            <th>Subcircuito</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+      <tbody>
+        <tr *ngFor="let opcion of reclamos">
+        <td>{{fechaInicio}}</td>
+        <td>{{fechaInicio}}</td>
+        <td></td>
+        <td>{{opcion.tipoIncidente}}</td>
+        <td>{{opcion.nombreSubcircuito}}</td>
+        
+        <td></td>
+    </tbody>
+  </table>
+
+
+ 
+</div>

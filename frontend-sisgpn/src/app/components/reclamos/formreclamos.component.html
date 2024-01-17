@@ -1,0 +1,114 @@
+<style>
+    .card{
+        top: 100px;
+        width: 800px;
+        margin: 0 auto;
+        float: none;
+    }
+    
+    .card-body{
+        padding: 20px;
+    
+    }
+    .card-title{
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        color: #000;
+        padding-bottom: 20px;
+    }
+    .form-control{
+        margin-bottom: 10px;
+        padding: 5px;
+    } 
+    
+    .btn-primary{
+        margin-top: 20px;
+        margin-left: 510px;
+        margin-bottom: 20px;
+        width: 150px;
+        height: 40px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+    }
+    </style>
+    
+    <div class="card">
+        <div class="card-header">
+            <div class="card-body">
+                <h4 class="card-title">Formulario Reclamos y Sugerencias</h4>
+    
+            <form #reclamoForm="ngForm">
+                <div class="form-group row">
+
+                    <label for="nombres" class="col-form-label col-sm-3">Nombres</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="reclamo.nombres" name="nombres" required #nombres="ngModel">
+                        <div class="alert alert-danger" *ngIf="nombres.invalid && (nombres.touched)">
+                            <div *ngIf="nombres.errors">
+                                El nombre es requerido
+                            </div>
+                         </div>
+                    </div>
+
+                    <label for="apellidos" class="col-form-label col-sm-3">Apellidos</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="reclamo.apellidos" name="apellidos" required #apellidos="ngModel">
+                        <div class="alert alert-danger" *ngIf="apellidos.invalid && (apellidos.touched)">
+                            <div *ngIf="apellidos.errors">
+                                El apellido es requerido
+                            </div>
+                         </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="rango" class="col-form-label col-sm-3">Tipo de Incidente</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" [(ngModel)]="reclamo.tipoIncidente" name="rango" required #ciudadNacimiento="ngModel">
+                                <option *ngFor="let opcion of opciones" [ngValue]="opcion">{{ opcion }}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <label for="apellidos" class="col-form-label col-sm-3">Detalle</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="reclamo.detalle" name="apellidos">
+                        
+                    </div>
+
+                    <label for="contacto" class="col-form-label col-sm-3">Contacto</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="reclamo.contacto" name="contacto" required #contacto="ngModel">
+                        <div class="alert alert-danger" *ngIf="contacto.invalid && (contacto.touched)">
+                            <div *ngIf="contacto.errors">
+                                El apellido es requerido
+                            </div>
+                         </div>
+                    </div>
+
+                    <label for="idSubcircuito" class="col-form-label col-sm-3">Subcircuito</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" [(ngModel)]="reclamo.idSubcircuito" name="idSubcircuito"  [(ngModel)]="reclamo.idCircuito" name="idSubcircuito" required #idSubcircuito="ngModel">
+                           <option *ngFor="let opcion of subcircuitos" [ngValue]="opcion.idSubcircuito">{{opcion.nombreSubcircuito}} </option>
+                        </select>
+                    </div>
+
+                </div>
+
+                
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                             <button class="btn btn-primary" role="button" (click)='createReclamo()'>Guardar</button>
+        
+                    </div>
+                </div>
+            
+    
+              
+            </form>
+             </div>
+        </div>
+    </div>

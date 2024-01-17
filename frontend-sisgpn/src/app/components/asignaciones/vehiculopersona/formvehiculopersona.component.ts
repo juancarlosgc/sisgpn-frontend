@@ -35,7 +35,7 @@ export class FormvehiculopersonaComponent implements OnInit {
   createVehiculoPersona(): void {
     this.vehiculoPersonaService.createVehiculoPersona(this.vehiculoPersona)
       .subscribe(data => {
-        this.router.navigate(['/listadodistritovehiculo'])
+        this.router.navigate(['/listadovehiculopersona'])
         swal('Nuevo Asignación', ` creada con éxito!`, 'success')
       }
       )

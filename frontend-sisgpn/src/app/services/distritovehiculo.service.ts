@@ -44,7 +44,7 @@ export class DistritovehiculoService {
     return this.http.get<Distritovehiculo>(this.URL + '/ver/' + id);
   };
 
-
+  
   updateDistritoVehiculo(circuito: Distritovehiculo): Observable<Distritovehiculo> {
     return this.http.put<Distritovehiculo>(`${this.URL}/editar`, circuito, { headers: this.httpHeaders })
   }
